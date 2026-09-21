@@ -74,6 +74,7 @@ import org.popcraft.bolt.matcher.block.ChorusMatcher;
 import org.popcraft.bolt.matcher.block.CocoaMatcher;
 import org.popcraft.bolt.matcher.block.CoralMatcher;
 import org.popcraft.bolt.matcher.block.CropsMatcher;
+import org.popcraft.bolt.matcher.block.CushionMatcher;
 import org.popcraft.bolt.matcher.block.DeadBushMatcher;
 import org.popcraft.bolt.matcher.block.DoorMatcher;
 import org.popcraft.bolt.matcher.block.FarmlandMatcher;
@@ -104,6 +105,7 @@ import org.popcraft.bolt.matcher.block.RepeaterMatcher;
 import org.popcraft.bolt.matcher.block.SaplingMatcher;
 import org.popcraft.bolt.matcher.block.ScaffoldingMatcher;
 import org.popcraft.bolt.matcher.block.SeaPickleMatcher;
+import org.popcraft.bolt.matcher.block.ShelfMushroomMatcher;
 import org.popcraft.bolt.matcher.block.SignMatcher;
 import org.popcraft.bolt.matcher.block.SmallDripleafMatcher;
 import org.popcraft.bolt.matcher.block.SmallFlowerMatcher;
@@ -176,7 +178,7 @@ public class BoltPlugin extends JavaPlugin implements BoltAPI {
             new DeadBushMatcher(), new HangingRootsMatcher(), new PointedDripstoneMatcher(), new FireMatcher(),
             new LilyPadMatcher(), new RepeaterMatcher(), new SpeleothemMatcher(), new SporeBlossomMatcher(),
             new SoulFireMatcher(), new FrogspawnMatcher(), new MangrovePropaguleMatcher(), new MultipleFacingMatcher(),
-            new HangingSignMatcher(), new PinkPetalsMatcher());
+            new HangingSignMatcher(), new PinkPetalsMatcher(), new ShelfMushroomMatcher(), new CushionMatcher());
     private static final List<EntityMatcher> ENTITY_MATCHERS = List.of();
     private static final Source ADMIN_PERMISSION_SOURCE = Source.of(SourceTypes.PERMISSION, "bolt.admin");
     private static final Source MOD_PERMISSION_SOURCE = Source.of(SourceTypes.PERMISSION, "bolt.mod");
