@@ -59,6 +59,7 @@ import org.popcraft.bolt.listeners.BlockListener;
 import org.popcraft.bolt.listeners.EntityListener;
 import org.popcraft.bolt.listeners.InventoryListener;
 import org.popcraft.bolt.listeners.PlayerListener;
+import org.popcraft.bolt.listeners.adapter.EntityBreakEventListener;
 import org.popcraft.bolt.listeners.adapter.ItemTransportingEntityValidateTargetEventListener;
 import org.popcraft.bolt.matcher.Match;
 import org.popcraft.bolt.matcher.block.AmethystClusterMatcher;
@@ -467,6 +468,9 @@ public class BoltPlugin extends JavaPlugin implements BoltAPI {
         pluginManager.registerEvents(entityListener, this);
         if (ItemTransportingEntityValidateTargetEventListener.canUse()) {
             pluginManager.registerEvents(new ItemTransportingEntityValidateTargetEventListener(entityListener::onItemTransportingEntityValidateTarget), this);
+        }
+        if (EntityBreakEventListener.canUse()) {
+            pluginManager.registerEvents(new EntityBreakEventListener(entityListener::onEntityBreak, entityListener::onEntityBreakByEntity), this);
         }
         pluginManager.registerEvents(new InventoryListener(this), this);
         pluginManager.registerEvents(new PlayerListener(this), this);
