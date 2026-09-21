@@ -284,11 +284,11 @@ public final class EntityListener extends InteractionListener implements Listene
                 plugin.removeProtection(protection);
                 if (plugin.canAccess(protection, player, Permission.DESTROY)) {
                     BoltComponents.sendMessage(
-                        player,
-                        Translation.CLICK_UNLOCKED,
-                        plugin.isUseActionBar(),
-                        Placeholder.component(Translation.Placeholder.PROTECTION_TYPE, Protections.protectionType(protection, player)),
-                        Placeholder.component(Translation.Placeholder.PROTECTION, Protections.displayType(protection, player))
+                            player,
+                            Translation.CLICK_UNLOCKED,
+                            plugin.isUseActionBar(),
+                            Placeholder.component(Translation.Placeholder.PROTECTION_TYPE, Protections.protectionType(protection, player)),
+                            Placeholder.component(Translation.Placeholder.PROTECTION, Protections.displayType(protection, player))
                     );
                 }
             }
@@ -309,11 +309,11 @@ public final class EntityListener extends InteractionListener implements Listene
                 plugin.removeProtection(protection);
                 if (plugin.canAccess(protection, player, Permission.DESTROY)) {
                     BoltComponents.sendMessage(
-                        player,
-                        Translation.CLICK_UNLOCKED,
-                        plugin.isUseActionBar(),
-                        Placeholder.component(Translation.Placeholder.PROTECTION_TYPE, Protections.protectionType(protection, player)),
-                        Placeholder.component(Translation.Placeholder.PROTECTION, Protections.displayType(protection, player))
+                            player,
+                            Translation.CLICK_UNLOCKED,
+                            plugin.isUseActionBar(),
+                            Placeholder.component(Translation.Placeholder.PROTECTION_TYPE, Protections.protectionType(protection, player)),
+                            Placeholder.component(Translation.Placeholder.PROTECTION, Protections.displayType(protection, player))
                     );
                 }
             }
