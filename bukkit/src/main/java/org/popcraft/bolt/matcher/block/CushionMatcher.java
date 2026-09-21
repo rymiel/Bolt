@@ -5,7 +5,6 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.ItemFrame;
 import org.popcraft.bolt.matcher.Match;
 import org.popcraft.bolt.util.EnumUtil;
 import org.popcraft.bolt.util.FoliaUtil;
@@ -35,8 +34,12 @@ public class CushionMatcher implements BlockMatcher {
     @Override
     public Match findMatch(Block block) {
         final Set<Entity> entities = new HashSet<>();
-        FoliaUtil.getNearbyEntities(block, block.getBoundingBox().expand(0.5, 0.5, 0.5, 0.5, 0.5, 0.5), ItemFrame.class::isInstance).forEach(entity -> {
-            if (entity.getType().equals(CUSHION) && entity.getLocation().getBlock().getRelative(BlockFace.UP).getLocation().equals(block.getLocation())) {
+        FoliaUtil.getNearbyEntities(block, block.getBoundingBox().expand(0, 0, 0, 0, 0.5, 0), (entity -> entity.getType().equals(CUSHION))).forEach(entity -> {
+            // Cushions may be "in" blocks (i.e. on a slab)
+            if (entity.getType().equals(CUSHION) && (
+                    entity.getLocation().toBlockLocation().equals(block.getLocation()) ||
+                    entity.getLocation().getBlock().getRelative(BlockFace.DOWN).getLocation().equals(block.getLocation())
+            )) {
                 entities.add(entity);
             }
         });
